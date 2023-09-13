@@ -1,97 +1,92 @@
-﻿// este son los numero de notas que tienen cada estudiantes
-int numeroDeNotas = 5;
-// Crear las notas de los estudiantes con matris
-int[] juanScores = new int[] {100,90,40,80,100};
-int[] luzScores = new int[] {100,90,90,80,100};
-int[] aylenScores = new int[] {100,90,80,80,90};
-int[] nancyScores = new int[] {100,90,100,100,100};
+﻿// int largo = 15;
+LineaHorizontal(100, 4, 2);
+LineaHorizontal(100, 4, 10);
+LineaHorizontal(50, 53, 25);
+LineaHorizontal(100, 4, 41);
 
-//crear nombre a los estudiantes con matris
-string[] nombreEstudiantes = new string[] {"Juan","Luz","Aylen","Nancy"};
-//Recorrer los nombre uno por uno
-foreach (string recorrerNombre in nombreEstudiantes)
+
+LineaVertical(40, 4, 2);
+LineaVertical(40, 103, 2);
+LineaVertical(32, 53, 10);
+
+MaquinaDeEscribir("B i e n v e n i d o  a  B a n c o   J a v i  C o i n s".ToUpper(),28, 6,30);
+MaquinaDeEscribir("M E N U", 25, 15,15);
+MaquinaDeEscribir("1.Deposito ", 10, 19,15);
+MaquinaDeEscribir("2.Retiro ", 10, 22,15);
+MaquinaDeEscribir("3.Consultar Saldo ", 10, 25,15);
+MaquinaDeEscribir("4.Mostrar informacion de la cuenta ", 10, 28,15);
+MaquinaDeEscribir("5.Salir ", 10, 31,15);
+
+MaquinaDeEscribir("CARGANDO", 73, 18, 15);
+MaquinaDeEscribir("...", 81, 18, 200);
+MaquinaDeEscribir("   ", 81, 18, 0);
+MaquinaDeEscribir("...", 81, 18, 200);
+MaquinaDeEscribir("   ", 81, 18, 0);
+MaquinaDeEscribir("...", 81, 18, 200);
+MaquinaDeEscribir("   ", 81, 18, 0);
+MaquinaDeEscribir("...", 81, 18, 200);
+MaquinaDeEscribir("   ", 81, 18, 0);
+MaquinaDeEscribir("           ", 73, 18, 0);
+MaquinaDeEscribir("DATOS DE LA CUENTA", 70, 12,15);
+MaquinaDeEscribir("NOMBRE: Cristobal ", 60, 14,15);
+MaquinaDeEscribir("APELLIDO: Storme", 60, 16,15);
+MaquinaDeEscribir("RUT: 18.392.855 - 4", 60, 18,15);
+MaquinaDeEscribir("DIRECCION: Parque Central 6868 ", 60, 20,15);
+MaquinaDeEscribir("SALDO: $2000 ", 60, 22,15);
+
+MaquinaDeEscribir("........................................",60,32,60);
+MaquinaDeEscribir("                                        ",60,32,0);
+MaquinaDeEscribir("             CARGANDO                   ",60,32,60);
+MaquinaDeEscribir("                                        ",60,32,0);
+MaquinaDeEscribir("........................................",60,32,60);
+MaquinaDeEscribir("                                        ",60,32,0);
+
+
+MaquinaDeEscribir("RESULTADO DE LA OPERACION ", 65, 27,15);
+MaquinaDeEscribir("Se ha realizado con exito desposito :  ", 60, 29,15);
+MaquinaDeEscribir("Se ha abonado : $30000  ", 60, 31,15);
+MaquinaDeEscribir("Cuenta numero: " + Convert.ToString(NumeroAleatorio(1000000,9000000)), 60, 33,15);
+MaquinaDeEscribir("Numero de Operacion: " + Convert.ToString(NumeroAleatorio(1000000, 9000000)), 60, 35,15);
+
+
+void MaquinaDeEscribir(string texto, int x, int y, int velocidad)
 {
-    if (recorrerNombre == "Juan")
+    for (int i = 0; i < texto.Length; i++)
     {
-        //SUMAR LAS NOTAS DEL ESTUDIANTES JUAN y dividirlos para sacar el promedio
-        int sum = 0;
-        decimal juanScore;
-
-        foreach (int sumarNotas in juanScores)
-        {   
-            sum += sumarNotas;
-        }
-
-        juanScore = (decimal)sum / (decimal)numeroDeNotas;
-
-        Console.WriteLine("Student\t\tGrade\n");
-        Console.WriteLine($"{recorrerNombre}:\t\t" + juanScore + "\tA-");
-
-        Console.WriteLine("Press the Enter key to continue");
-        Console.ReadLine();
+        EscribirEn(Convert.ToString(texto[i]), x+i, y);
+        Thread.Sleep(velocidad);
     }
-        if (recorrerNombre == "Nancy")
-    {
-        //SUMAR LAS NOTAS DEL ESTUDIANTES JUAN y dividirlos para sacar el promedio
-        int sum = 0;
-        decimal nancyScore;
+    
+}
 
-        foreach (int sumarNotas in nancyScores)
-        {   
-            sum += sumarNotas;
-        }
-
-        nancyScore = (decimal)sum / (decimal)numeroDeNotas;
-
-        Console.WriteLine("Student\t\tGrade\n");
-        Console.WriteLine($"{recorrerNombre}:\t\t" + nancyScore + "\tA-");
-
-        Console.WriteLine("Press the Enter key to continue");
-        Console.ReadLine();
-    }
-        if (recorrerNombre == "Luz")
-    {
-        //SUMAR LAS NOTAS DEL ESTUDIANTES JUAN y dividirlos para sacar el promedio
-        int sum = 0;
-        decimal luzScore;
-
-        foreach (int sumarNotas in luzScores)
-        {   
-            sum += sumarNotas;
-        }
-
-        luzScore = (decimal)sum / (decimal)numeroDeNotas;
-
-        Console.WriteLine("Student\t\tGrade\n");
-        Console.WriteLine($"{recorrerNombre}:\t\t" + luzScore + "\tA-");
-
-        Console.WriteLine("Press the Enter key to continue");
-        Console.ReadLine();
-    }
-        if (recorrerNombre == "Aylen")
-    {
-        //SUMAR LAS NOTAS DEL ESTUDIANTES JUAN y dividirlos para sacar el promedio
-        int sum = 0;
-        decimal aylenScore;
-
-        foreach (int sumarNotas in aylenScores)
-        {   
-            sum += sumarNotas;
-        }
-
-        aylenScore = (decimal)sum / (decimal)numeroDeNotas;
-
-        Console.WriteLine("Student\t\tGrade\n");
-        Console.WriteLine($"{recorrerNombre}:\t\t" + aylenScore + "\tA-");
-
-        Console.WriteLine("Press the Enter key to continue");
-        Console.ReadLine();
-    }
+int NumeroAleatorio(int a, int b)
+{
+    Random random = new Random();
+    return random.Next(a, b+1);
 }
 
 
 
 
+Console.SetCursorPosition(0, 45);
+void LineaHorizontal(int largo, int x , int y)
+{
+    for (int i = 0; i < largo; i++)
+    {
+        EscribirEn("*", i+x,y);
 
+    }
+}
+void LineaVertical(int largo, int x, int y)
+{
+    for (int i = 0; i < largo; i++)
+    {
+        EscribirEn("*",x,i+y);
+    }
+}
 
-
+void EscribirEn (string caracter, int x , int y)
+{
+    Console.SetCursorPosition(x,y);
+    Console.Write(caracter);
+}
